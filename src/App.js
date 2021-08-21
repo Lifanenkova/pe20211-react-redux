@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import UserPage from './Pages/UserPage';
+import UserSagaPage from './Pages/UserPage';
 
 function App () {
-  return <UserPage />;
+  return <UserSagaPage />;
 }
 
 export default App;
