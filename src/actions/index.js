@@ -23,3 +23,21 @@ export const deleteUser = id => ({
   type: ACTION_TYPES.DELETE_USER,
   id: id,
 });
+
+export const getUsersAction = () => ({
+  type: ACTION_TYPES.GET_USERS_ACTION,
+});
+
+export const getUsersRequest = () => ({
+  type: ACTION_TYPES.GET_USERS_REQUEST,
+});
+
+export const getUsersSuccess = users => ({
+  type: ACTION_TYPES.GET_USERS_SUCCESS,
+  users: users,
+});
+
+export const getUsersError = error => ({
+  type: ACTION_TYPES.GET_USERS_ERROR,
+  error: error,
+});

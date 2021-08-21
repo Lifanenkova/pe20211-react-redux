@@ -1,8 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getUsersAction } from '../../actions';
+import ACTION_TYPES from '../../actions/actionTypes';
+import * as actionCreators from './../../actions';
 
 function UsersSagaList (props) {
-  const {} = props;
+  const { users, isFetching, error, getUsers } = props;
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   const mapUser = ({ id, name, telNumber, isBanned }) => {
     const changeBan = () => {
       updateUserAction({ id: id, isBanned: !isBanned });
@@ -22,9 +30,9 @@ function UsersSagaList (props) {
   };
   return <ul>{users.map(mapUser)}</ul>;
 }
-const mapStateToProps = state => state.userState;
-const mapDispatchToProps = dispatch => {
-  return {};
-};
+const mapStateToProps = state => state.user;
+const mapDispatchToProps = dispatch => ({
+  getUsers: () => dispatch(actionCreators.getUsersAction()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersSagaList);

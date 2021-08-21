@@ -5,7 +5,7 @@ import UserSagaList from '../../components/UserSagaList';
 function index () {
   return (
     <>
-      <UserSagaForm />
+      {/* <UserSagaForm /> */}
       <UserSagaList />
     </>
   );
